@@ -1,0 +1,48 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+<title>Page Title</title>
+</head>
+<body>
+
+<h1>Osamu Dazai Wiki</h1>
+<p>Search for era</p>
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+
+<ul id="myUL">
+  <li><a href="./Osamu_Dazai_Agency_Era/index.html">Osamu Dazai Agency Era</a></li>
+  <li><a href="./Dark_Era_Osamu_Dazai/index.html">Osamu Dazai Dark Era</a></li>
+
+  <li><a href="Beast_Osamu_Dazai/index.html">BEAST Osamu Dazai</a></li>
+ <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7_BT9bmrOLi7CDRjon9y_1VUA4irF-loeZA&s"></img>
+ <img src="https://static0.cbrimages.com/wordpress/wp-content/uploads/2023/01/bungou-stray-dogs-15-facts-you-didn-t-know-about-osamu-dazai-1.jpg"></img>
+ <img src="https://preview.redd.it/ladies-or-anyone-attracted-to-dazai-what-do-yall-see-in-v0-3cba1s9y8ny91.jpg?width=640&crop=smart&auto=webp&s=1ec75bc4029adb40eccf99343b184dc75247f8f7"></img>
+ <img src="https://preview.redd.it/how-smart-is-beast-dazai-compared-to-bsd-dazai-v0-1m7ns7qc2c5e1.png?width=640&crop=smart&auto=webp&s=6579f93968019dbf8677ea888b05a6450149eaba"></img>
+
+</ul> 
+
+<!-- Javascript is below, logic for searching through the characters-->
+<script>
+function myFunction() {
+  // Declare variables
+  var input, filter, ul, li, a, i, txtValue;
+  input = document.getElementById('myInput');
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("myUL");
+  li = ul.getElementsByTagName('li');
+
+  // Loop through all list items, and hide those who don't match the search query
+  for (i = 0; i < li.length; i++) {
+    a = li[i].getElementsByTagName("a")[0];
+    txtValue = a.textContent || a.innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+}
+</script>
+</body>
+</html> 
